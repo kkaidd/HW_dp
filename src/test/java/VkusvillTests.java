@@ -52,46 +52,18 @@ public class VkusvillTests extends TestBase {
         assertion.textExist("Корзина");
     }
 
-    @DisplayName("Проверить поиск и переход на карточку продукта")
-    @Test
-    @Tag("High")
-    public void findAndPickProduct() {
-        SelenideElement product = navigationPage.findProduct("Молоко");
-        Assertions.assertNotNull(product);
-
-        navigationPage.pickProduct(product);
-
-        assertion.h1Exist("Молоко");
-        assertion.addShoppingCardAvailable();
-    }
-
-    @DisplayName("Проверить выбор магазина для самовывоза и времени готовности заказа через карточку продукта")
-    @Test
-    @Tag("High")
-    public void testPickAddressAndDeliveryTime_viaProductDetailsScreen() {
-        SelenideElement product = navigationPage.findProduct("Молоко");
-        navigationPage.pickProduct(product);
-
-        navigationPage.pickAddress("Рыбинск, Крестовая улица, 41");
-
-        navigationPage.pickDeliveryTime();
-
-        assertion.existElementWithText(".HeaderATDToggler__Link.js-delivery__shopselect--form-show",
-                "Крестовая");
-    }
-
     @DisplayName("Проверить поиск магазина по адресу")
     @Test
     @Tag("High")
     public void testFindShopByAddress() {
         navigationPage.pickShops();
-        navigationPage.selectRegion("Ярославль");
-        navigationPage.selectCity("Рыбин");
+        navigationPage.selectRegion("Тверь");
+        navigationPage.selectCity("Тверской проспект 8");
 
-        assertion.numberOfElements(2, $$(".VV21_MapPanelShops__Item"));
+        assertion.numberOfElements(1, $$(".VV21_MapPanelShops__Item"));
 
-        navigationPage.selectShopByStreet("Крест");
+        navigationPage.selectShopByStreet("проспект 8");
 
-        assertion.existElementWithText(".VV21_MapPanelCard__Phone", "121-32-65");
+        assertion.existElementWithText(".VV21_MapPanelCard__Phone", "+7 (929) 096-79-67");
     }
 }

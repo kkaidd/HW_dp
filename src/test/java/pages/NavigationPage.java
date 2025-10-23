@@ -5,7 +5,10 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selectors;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
+import java.time.Duration;
 
+
+import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
@@ -33,7 +36,7 @@ public class NavigationPage {
     }
 
     @Step("Выбрать магазин для самовывоза")
-    public void pickAddress(String address) {
+    public void pickAddress(String address, String city) {
         $("h1").scrollTo();
         $(Selectors.withText("Выбрать магазин")).shouldBe(Condition.visible).click();
         $(".VV23_RWayModal_Main__AddAddressBtn").shouldBe(Condition.visible).click();
@@ -49,10 +52,8 @@ public class NavigationPage {
         SelenideElement element = options.findBy(Condition.visible);
         if (element.isDisplayed()) element.click();
 
-        try {
-            Thread.sleep(3000L);
-        } catch (InterruptedException e) {
-        }
+        $(".js-vv21-shops-panel-search__input").setValue(city);
+        $$(".VV21_MapPanelShops__Item").shouldHave(sizeGreaterThan(0), Duration.ofSeconds(10));
 
         $("#js-my-addresses-addresses-shop-new .VV_RWayAdressesAddModal__ButtonWrp button")
                 .shouldBe(Condition.visible).click();
