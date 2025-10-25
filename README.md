@@ -52,10 +52,11 @@ ____
 
 ____
 <a id="jenkins"></a>
-## <img alt="Jenkins" height="25" src="images/logo/Jenkins.svg" width="25"/></a><a name="Сборка"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/HW-dp/)</a>
+## <img alt="Jenkins" height="25" src="images/logo/Jenkins.svg" width="25"/> Сборка в [Jenkins](https://jenkins.autotests.cloud/job/HW-dp/)
+
 ____
 <p align="center">  
-<a href="https://jenkins.autotests.cloud/job/HW-dp//"><img src="images/screen/vkusvill_jenkins_build.png" alt="Jenkins" width="950"/></a>  
+<a href="https://jenkins.autotests.cloud/job/HW-dp/"><img src="images/screen/vkusvill_jenkins_build.png" alt="Jenkins" width="950"/></a>  
 </p>
 
 
