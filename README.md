@@ -148,3 +148,10 @@ vkusvill
 ## <img alt="Selenoid" height="25" src="images/logo/Selenoid.svg" width="25"/></a> Примеры видео выполнения тестов на Selenoid
 ---
 
+<p align="center">
+<img title="Selenoid Video" src="images/video/vid.gif" width="550" height="350"  alt="video">
+<img title="Selenoid Video" src="images/video/vid_2.gif" width="550" height="350"  alt="video">
+<img title="Selenoid Video" src="images/video/vid_3.gif" width="550" height="350"  alt="video">
+<img title="Selenoid Video" src="images/video/vid_4.gif" width="550" height="350"  alt="video">
+<img width="468" height="718" alt="image" src="https://github.com/user-attachments/assets/11670f67-c0a9-43a0-a933-dee4e0d2177a" />
+</p>
