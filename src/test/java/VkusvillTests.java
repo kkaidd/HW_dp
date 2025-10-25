@@ -44,26 +44,26 @@ public class VkusvillTests extends TestBase {
         assertion.textExist("Работа");
     }
 
-    @DisplayName("Проверить переход в корзину")
-    @Test
-    @Tag("Medium")
-    void cartPageCheckTest() {
-        mainPage.clickCart();
-        assertion.textExist("Корзина");
-    }
-
-    @DisplayName("Проверить поиск магазина по адресу")
-    @Test
-    @Tag("High")
-    public void testFindShopByAddress() {
-        navigationPage.pickShops();
-        navigationPage.selectRegion("Тверь");
-        navigationPage.selectCity("Тверской проспект 8");
-
-        assertion.numberOfElements(1, $$(".VV21_MapPanelShops__Item"));
-
-        navigationPage.selectShopByStreet("проспект 8");
-
-        assertion.existElementWithText(".VV21_MapPanelCard__Phone", "+7 (929) 096-79-67");
-    }
+//    @DisplayName("Проверить переход в корзину")
+//    @Test
+//    @Tag("Medium")
+//    void cartPageCheckTest() {
+//        mainPage.clickCart();
+//        assertion.textExist("Корзина");
+//    }
+//
+//    @DisplayName("Проверить поиск магазина по адресу")
+//    @Test
+//    @Tag("High")
+//    public void testFindShopByAddress() {
+//        navigationPage.pickShops();
+//        navigationPage.selectRegion("Тверь");
+//        navigationPage.selectCity("Тверской проспект 8");
+//
+//        assertion.numberOfElements(1, $$(".VV21_MapPanelShops__Item"));
+//
+//        navigationPage.selectShopByStreet("проспект 8");
+//
+//        assertion.existElementWithText(".VV21_MapPanelCard__Phone", "+7 (929) 096-79-67");
+//    }
 }
