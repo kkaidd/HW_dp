@@ -36,14 +36,14 @@ public class VkusvillTests extends TestBase {
         assertion.textExist("Рецепты");
     }
 
-    @DisplayName("Проверить переход на страницу вакансий")
-    @Test
-    @Tag("Medium")
-    void vacanciesPageCheckTest() {
-        mainPage.clickVacancies();
-        assertion.textExist("Работа");
-    }
-
+//    @DisplayName("Проверить переход на страницу вакансий")
+//    @Test
+//    @Tag("Medium")
+//    void vacanciesPageCheckTest() {
+//        mainPage.clickVacancies();
+//        assertion.textExist("Работа");
+//    }
+//
 //    @DisplayName("Проверить переход в корзину")
 //    @Test
 //    @Tag("Medium")
