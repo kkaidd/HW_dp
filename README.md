@@ -38,10 +38,10 @@
 <a href="https://www.jenkins.io/"><img src="images/logo/Jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>  
 </p>
 
-____
+---
 <a id="cases"></a>
 ## <a name="Примеры автоматизированных тест-кейсов">**Примеры автоматизированных тест-кейсов:**</a>
-____
+---
 - ✓ *Проверка работы Поп-апа Меню*
 - ✓ *Проверка работы Поп-апа Каталог*
 - ✓ *Проверка перехода на страницу рецептов*
@@ -50,11 +50,11 @@ ____
 
 
 
-____
+---
 <a id="jenkins"></a>
 ## <img alt="Jenkins" height="25" src="images/logo/Jenkins.svg" width="25"/> Сборка в [Jenkins](https://jenkins.autotests.cloud/job/HW-dp/)
 
-____
+---
 <p align="center">  
 <a href="https://jenkins.autotests.cloud/job/HW-dp/"><img src="images/screen/vkusvill_jenkins_build.png" alt="Jenkins" width="950"/></a>  
 </p>
@@ -70,7 +70,7 @@ ____
 
 <a id="console"></a>
 ## Команды для запуска из терминала
-___ 
+---
 ***Локальный запуск:***
 ```bash  
 gradle clean vkusvill_test
@@ -89,10 +89,10 @@ vkusvill
 "-DremoteUrl=${REMOTEURL}"
 ```
 
-___
+---
 <a id="allure"></a>
 ## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/></a> <a name="Allure"></a>Allure [отчет](https://jenkins.autotests.cloud/job/HW-dp/allure/)</a>
-___
+---
 
 ### *Основная страница отчёта*
 
@@ -113,10 +113,10 @@ ___
 
 </p>
 
-___
+---
 <a id="allure-testops"></a>
 ## <img alt="Allure" height="25" src="images/logo/Allure2.svg" width="25"/></a>Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/4974/dashboards">Allure TestOps</a>
-____
+---
 
 ### *Авто тест-кейсы*
 
@@ -124,18 +124,18 @@ ____
 <img title="Allure TestOps Tests" src="images/screen/vkusvill_allure_autotestsN.png" width="850">  
 </p>
 
-____
+---
 <a id="telegram"></a>
 ## <img alt="Allure" height="25" src="images/logo/Telegram.svg" width="25"/></a> Уведомление в Telegram при помощи бота
-____
+---
 <p align="center">  
 <img title="Allure Overview Dashboard" src="images/screen/vkusvill_telegram.png" width="550">  
 </p>
 
-____
+---
 <a id="video"></a>
 ## <img alt="Selenoid" height="25" src="images/logo/Selenoid.svg" width="25"/></a> Примеры видео выполнения тестов на Selenoid
-____
+---
 <p align="center">
 <img title="Selenoid Video" src="images/video/vid.gif" width="550" height="350"  alt="video">
 <img title="Selenoid Video" src="images/video/vid_2.gif" width="550" height="350"  alt="video">
