@@ -1,143 +1,122 @@
-﻿
-# Проект по автоматизации тестирования для компании [ВкусВилл](https://vkusvill.ru)
+# 🧪 Проект автоматизации тестирования
 
-> **ВкусВилл** — сеть магазинов продуктов для здорового питания. 
+![Java](https://img.shields.io/badge/Java-17-orange)
+![Gradle](https://img.shields.io/badge/Gradle-8.5-blue)
+![Selenide](https://img.shields.io/badge/Selenide-6.17.2-green)
+![Allure](https://img.shields.io/badge/Allure_Report-Enabled-purple)
 
-## **Содержание:**
-____
+---
 
-* <a href="#tools">Технологии и инструменты</a>
+## 📋 О проекте
 
-* <a href="#cases">Примеры автоматизированных тест-кейсов</a>
+Проект предназначен для автоматизированного тестирования веб-приложения.  
+Используются **Selenide**, **JUnit5**, **Allure**, **Gradle**, а также паттерн **Page Object** для структурирования тестов.
 
-* <a href="#jenkins">Сборка в Jenkins</a>
+---
 
-* <a href="#console">Запуск из терминала</a>
+## ⚙️ Стек технологий
 
-* <a href="#allure">Allure отчет</a>
+<details>
+<summary>Показать стек</summary>
 
-* <a href="#allure-testops">Интеграция с Allure TestOps</a>
+- Java 17  
+- Gradle 8.5  
+- JUnit 5  
+- Selenide 6.17.2  
+- Allure Report  
+- Jenkins  
+- GitHub / GitLab CI  
+- IntelliJ IDEA
 
-* <a href="#telegram">Уведомление в Telegram при помощи бота</a>
+</details>
 
-* <a href="#video">Примеры видео выполнения тестов на Selenoid</a>
-____
-<a id="tools"></a>
-## <a name="Технологии и инструменты">**Технологии и инструменты:**</a>
+---
 
-<p align="center">  
-<a href="https://www.jetbrains.com/idea/"><img src="images/logo/Intelij_IDEA.svg" width="50" height="50"  alt="IDEA"/></a>  
-<a href="https://www.java.com/"><img src="images/logo/Java.svg" width="50" height="50"  alt="Java"/></a>  
-<a href="https://github.com/"><img src="images/logo/Github.svg" width="50" height="50"  alt="Github"/></a>  
-<a href="https://junit.org/junit5/"><img src="images/logo/JUnit5.svg" width="50" height="50"  alt="JUnit 5"/></a>  
-<a href="https://gradle.org/"><img src="images/logo/Gradle.svg" width="50" height="50"  alt="Gradle"/></a>  
-<a href="https://selenide.org/"><img src="images/logo/Selenide.svg" width="50" height="50"  alt="Selenide"/></a>  
-<a href="https://aerokube.com/selenoid/"><img src="images/logo/Selenoid.svg" width="50" height="50"  alt="Selenoid"/></a>  
-<a href="ht[images](images)tps://github.com/allure-framework/allure2"><img src="images/logo/Allure.svg" width="50" height="50"  alt="Allure"/></a> 
-<a href="https://qameta.io/"><img src="images/logo/Allure2.svg" width="50" height="50"  alt="Allure TestOps"/></a>   
-<a href="https://www.jenkins.io/"><img src="images/logo/Jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>  
-</p>
+## 🧩 Архитектура проекта
 
-____
-<a id="cases"></a>
-## <a name="Примеры автоматизированных тест-кейсов">**Примеры автоматизированных тест-кейсов:**</a>
-____
-- ✓ *Проверка работы Поп-апа Меню*
-- ✓ *Проверка работы Поп-апа Каталог*
-- ✓ *Проверка перехода на страницу рецептов*
-- ✓ *Проверка перехода на страницу Корзины*
-- ✓ *Проверка перехода на страницу вакансий*
+<details>
+<summary>Показать структуру проекта</summary>
 
-
-
-____
-<a id="jenkins"></a>
-## <img alt="Jenkins" height="25" src="images/logo/Jenkins.svg" width="25"/></a><a name="Сборка"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/HW14-VkusVill/)</a>
-____
-<p align="center">  
-<a href="https://jenkins.autotests.cloud/job/HW14-VkusVill/"><img src="images/screen/vkusvill_jenkins_build.png" alt="Jenkins" width="950"/></a>  
-</p>
-
-
-### **Параметры сборки в Jenkins:**
-
-- *BROWSER (браузер, по умолчанию chrome)*
-- *VERSION (версия браузера, по умолчанию 126)*
-- *SIZE (размер окна браузера, по умолчанию 1920x1080)*
-- *REMOTEURL (адрес хоста для удалённого запуска тестов)*
-
-
-<a id="console"></a>
-## Команды для запуска из терминала
-___
-***Локальный запуск:***
-```bash  
-gradle clean vkusvill_test
 ```
-```bash  
+src
+ ├── main
+ │    └── java
+ │         └── pages
+ │              └── MainPage.java
+ ├── test
+ │    └── java
+ │         ├── tests
+ │         │    └── MainPageTests.java
+ │         └── resources
+ │              └── allure.properties
+ └── build.gradle
+```
+</details>
+
+---
+
+## 🚀 Запуск тестов
+
+<details>
+<summary>Показать инструкции</summary>
+
+### Локальный запуск
+```bash
 gradle clean test
 ```
 
-***Удалённый запуск через Jenkins:***
-```bash  
-clean 
-vkusvill 
-"-Dbrowser=${BROWSER}" 
-"-DbrowserSize=${SIZE}" 
-"-DbrowserVersion=${VERSION}" 
-"-DremoteUrl=${REMOTEURL}"
+### Запуск с Allure-отчётом
+```bash
+gradle clean test allureReport
 ```
-___
-<a id="allure"></a>
-## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/></a> <a name="Allure"></a>Allure [отчет](https://jenkins.autotests.cloud/job/HW14-VkusVill/19/allure/)</a>
-___
 
-### *Основная страница отчёта*
+### Запуск через Jenkins
+1. Открыть задачу в Jenkins.  
+2. Указать параметры окружения.  
+3. Нажать **Build Now**.
 
-<p align="center">  
-<img title="Allure Overview Dashboard" src="images/screen/vkusvill_jenkins.png" width="850">  
-</p>  
+</details>
 
-### *Тест-кейсы*
+---
 
-<p align="center">  
-<img title="Allure Tests" src="images/screen/vkusvill_jenkins_tests.png" width="850">  
-</p>
+## 📊 Отчёт Allure
 
-### *Графики*
+<details>
+<summary>Показать пример отчёта</summary>
 
-  <p align="center">  
-<img title="Allure Graphics" src="images/screen/vkusvill_allure_graphs.png" width="850">
+![Allure Report Screenshot](images/screen/allure-report.png)
 
-</p>
+</details>
 
-___
-<a id="allure-testops"></a>
-## <img alt="Allure" height="25" src="images/logo/Allure2.svg" width="25"/></a>Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/4974/dashboards">Allure TestOps</a>
-____
+---
 
-### *Авто тест-кейсы*
+## 📸 Скриншоты
 
-<p align="center">  
-<img title="Allure TestOps Tests" src="images/screen/vkusvill_allure_autotestsN.png" width="850">  
-</p>
+<details>
+<summary>Показать изображения</summary>
 
-____
-<a id="telegram"></a>
-## <img alt="Allure" height="25" src="images/logo/Telegram.svg" width="25"/></a> Уведомление в Telegram при помощи бота
-____
-<p align="center">  
-<img title="Allure Overview Dashboard" src="images/screen/vkusvill_telegram.png" width="550">  
-</p>
+| Этап | Скриншот |
+|------|-----------|
+| Главная страница | ![Main Page](images/screen/main-page.png) |
+| Результаты тестов | ![Tests](images/screen/tests.png) |
 
-____
-<a id="video"></a>
-## <img alt="Selenoid" height="25" src="images/logo/Selenoid.svg" width="25"/></a> Примеры видео выполнения тестов на Selenoid
-____
-<p align="center">
-<img title="Selenoid Video" src="images/video/vid.gif" width="550" height="350"  alt="video">
-<img title="Selenoid Video" src="images/video/vid_2.gif" width="550" height="350"  alt="video">
-<img title="Selenoid Video" src="images/video/vid_3.gif" width="550" height="350"  alt="video">
-<img title="Selenoid Video" src="images/video/vid_4.gif" width="550" height="350"  alt="video">   
-</p>
+</details>
 
+---
+
+## 🎥 Видео выполнения тестов
+
+<details>
+<summary>Показать видео</summary>
+
+| Тест | Видео |
+|------|--------|
+| Авторизация | ![Video](images/video/test-login.gif) |
+| Покупка товара | ![Video](images/video/test-purchase.gif) |
+
+</details>
+
+---
+
+## 💬 Бот
+💼 Telegram: [@kaidAQA]([https://t.me/username](https://t.me/kaidAQA))
